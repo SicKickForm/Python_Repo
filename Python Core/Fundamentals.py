@@ -2,9 +2,9 @@
 print('Ready?')
 # Use \n to move cursor to the next line
 print('Three!\nTwo!\nOne!\nGo')
+print('\110\145\154\154\157' + ' ' + '\x57\x6f\x72\x6c\x64')
 # You can use ''' to write multi-line messages or comments (Docstrings)
-print('''Hello\tWorld!
-I'm SicKickFormOFHumanKind
+print('''I\'m SicKickForm\t\bOfHumanKind
 And this is My message output file''')
 print('So that ' + 'I can take some quick looks ' + "in future")
 print("Again" + (' and again') * 2)
@@ -12,56 +12,88 @@ print("Again" + (' and again') * 2)
 print('''The Enter key follows the \\r\\n command in windows systems and
 \\n command in linux or unix systems.''')
 
-# Message output methods
-Age = 18
-Term = 12.5
-Project = 'programming'
-Major = 'Computer-Science '
-# Insert variables into the message
-Info = ('I\'m {} and I\'ve passed {} percent of {} project in {}.')
-print(Info.format(str(Age), str(Term), Project.capitalize(), Major.strip()))
-Major.replace('c', 'C')
-for X in Major.upper():
-    print((X + " ") * 2)
-[print(X) for X in Major.upper() * 2]
-for X in Project:
-    for Y in range(2):
-        print(X, Y)
-Sub_Title = Project + ' language'
-print(Sub_Title.split(' '))
-Options = (', '.join(('A' "B" 'C' "D")))
-print(Options)
-del (Age, Term, Project, Major, Info, Sub_Title, Options)
+# Membership operators
+Name = 'SicKickForm'
+'SicKick' in Name
+'Human' not in Name
+del Name
 
-# Simple mathematical operators
-A = ((5 - 2) * (12 / (16 % 6)) + (2 ** (9 // (16 ** (1/2)))))
-# ((3) * (12 / (4)) + (2 ** (9 // (4.0)))
-# ((3 * (3.0)) + (2 ** (2.0)))
-# ((9.0) + (4.0))
-# (13.0)
+# Arithmetic operators
+A = 10
+B = 2
+A + B
+# 10 + 2 = 12
+A - B
+# 10 - 2 = 8
+A * B
+# 10 * 2 = 20
+A / B
+# 10 / 2 = 5.0
+A ** B
+# 10 ** 2 = 100
+print(A // B)
+# 10 // 2 = 5
+print(A % B)
+# 10 % 2 = 0.00
 
-# Quick mathematical operators
-A += 2
-# A = A + 2 = 15.0
-A -= 3.0
-# A = A - 3.0 = 12.0
-A *= -2
-# A = A * -2 = -24.0
-A /= -8.0
-# A = A / -8.0 = 3.0
-A **= 4/2
-A = pow(A, 2.0)
-# A = A ** 2.0 = 9.0
-A //= (8 % 3)
-# A = A // 2.0 = 4.0
-A %= 2 * (2.25 ** (1/2))
-# A = A % 2 * (1.5) = A % 3.0 = 1.0
+# Quick Arithmetic operators
+A += B
+# A = A + B
+A -= B
+# A = A - B
+A *= B
+# A = A * B
+A /= B
+# A = A / B
+A **= B
+pow(A, B)
+# A = A ** B
+A //= B
+# A = A // B
+A %= B
+# A = A % B
 A = abs(A)
-# A = |A| = +1.0
-A = max(A, 2)
-# A = 2
-A = min(A, 2)
-# A = 1.0
-A = round(A)
-# A = 1
-del A
+# A = |A|
+# Returns the greatest number
+max(A, B)
+# Returns the least number
+min(A, B)
+# Returns the closest integer to number
+round(A)
+del A, B
+
+
+# Bit wise operators
+# You can use quick bit wise operators too
+# Returns the bits that exist in X and Y as a number
+X = 8
+Y = 3
+X & Y
+# 00001000 & 00000011 = 00000000 = 0
+# Returns the bits that exist in X or Y as a number
+X | Y
+# 00001000 | 00000011 = 00001011 = 11
+# # Returns the bits that exist in X or Y not in X and Y as a number
+X ^ Y
+# 00001000 ^ 00000011 = 00001011 = 11
+# Inverts all the bits
+~X
+# ~00001000 = 11110111 = -9
+
+# Compersion operators
+X == 8
+Y != 4
+X > Y
+Y < X
+X >= Y
+Y <= X
+
+# Logical operators
+Y <= X and X > Y
+Y != 4 or Y == 3
+not X != 8
+
+# Identity operators
+X is 8
+Y is not 4
+del X, Y
