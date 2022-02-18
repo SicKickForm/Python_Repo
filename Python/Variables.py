@@ -48,13 +48,17 @@ Translate = {'å': 'a'}
 print(TeamMate.translate(Translate))
 print(TeamMate.replace('å', 'a'))
 print(TeamMate.isalnum())
-# Insert values into the string
+# Insert values into the string using format command
 # Use format_map(dict) command to insert multiple values from a dictionary
-print(f'He is {Name}')
-Info = '{} is {} years old'
+Age = 18
+print(f'His name is {Name} and He is {Age}')
+# Use :.2f command to convert number into a two-digit float
+Info = '{} is {:.2f} years old'
 print(Info.format(Name, 18))
+# You can use index numbers to verify the values placement
+Info = '{0} is {1} years old'
 print(Info.format(Name, 18).splitlines())
-del UserName, Name, TeamMate, Translate, Info
+del UserName, Name, TeamMate, Translate, Age, Info
 
 # Crafting integer (Snake case)
 Wasted_Years = 18
@@ -271,6 +275,33 @@ del Num1
 Code = memoryview(bytes(5))
 print(type(Code))
 del Code
+
+# Arrays iteration (iterable and iterator)
+# You can Use iteration with iter() and next() commands
+Names = ('SicKickForm', 'Dia', 'akaTeen', 'Siren')
+Community = iter(Names)
+print(next(Community))
+print(next(Community))
+print(next(Community))
+print(next(Community))
+del Names, Community
+
+# Variables scope
+# Variables created without indentation are global
+# Variables created with indentation are local
+# global and local variables with same name are different
+# You can use global command to create or change global variables in local
+Date = 2022
+print(Date)
+
+
+def Func():
+    global Date
+    Date = '2/9/2022'
+    print(Date)
+
+
+Func()
 
 # User input value
 UserName = str(input('What\'s Your name?'))

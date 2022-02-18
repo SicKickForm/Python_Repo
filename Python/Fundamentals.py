@@ -35,7 +35,6 @@ print(A // B)
 # 10 // 2 = 5
 print(A % B)
 # 10 % 2 = 0.00
-
 # Quick Arithmetic operators
 A += B
 # A = A + B
@@ -61,7 +60,6 @@ min(A, B)
 # Returns the closest integer to number
 round(A)
 del A, B
-
 
 # Bit wise operators
 # You can use quick bit wise operators too

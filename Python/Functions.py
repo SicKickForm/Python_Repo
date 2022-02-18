@@ -70,16 +70,10 @@ def Func8():
 
 
 Func8()
-# Use global command to change or create a global variable inside function
-# Global variables can be used in functions but not contrariwise
 # Use list to return multiple arguments
-Sign = '----'
 
 
 def Func9(X, Y):
-    global Sign
-    Sign = '++++'
-    print(Sign)
     return[X + Y, X - Y, X * Y, X / Y]
 
 
@@ -88,3 +82,15 @@ print(Func9(8, 2)[1])
 print(Func9(8, 2)[2])
 print(Func9(8, 2)[3])
 print(Func9(8, 2))
+# Use lambda function as an anonymous function inside another
+# lambda function takes only one expression
+
+
+def Func10(N):
+    return lambda A, B, C: (A + B + C) ** N
+
+
+Lambda_Func10 = Func10(3)
+print(Lambda_Func10(2, 4, 8))
+del (Func1, Func2, Members, Func3, Func4, Func5, Func6,
+     Func7, Func8, Func9, Func10, Lambda_Func10)
