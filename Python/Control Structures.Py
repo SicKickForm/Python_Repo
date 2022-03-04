@@ -1,4 +1,4 @@
-# Nested if_else/elif statement
+# Nested if-else/elif statement
 Num = int(input('Enter a number:'))
 if Num == 0:
     pass
@@ -32,3 +32,37 @@ for Places in range(1, 4):
 else:
     print(str(i) + ' Home')
 del i, Places, Friends, Consumables, Menu
+
+# Assertion
+# Use assert command to execute a sanity-check inside code
+Age = int(input('Enter Your age:'))
+assert Age > 6, 'Under-Age'
+print('G Check')
+assert Age > 10, 'Under-Age'
+print('PG Check')
+assert Age > 13, 'Under-Age'
+print('PG-13 Check')
+assert Age > 17, 'Under-Age'
+print('R and NC-17 Check')
+
+# Try except statement
+# The try block lets You test a block of code for errors
+# The except block lets You ignore the error for now
+# The else block is executed when there is no error
+# The finally block is executed regardless of the result of try-except blocks
+try:
+    Age > 18
+except NameError:
+    print('Enter Your age again')
+except:
+    print('You are not qualified')
+else:
+    print('You are qualified')
+finally:
+    print('The test is over')
+# Use raise command to create an exception with message inside code
+if Age < 18:
+    raise Exception('You are not qualified')
+else:
+    print('You are qualified')
+    del Age
