@@ -1,3 +1,4 @@
+import datetime
 import random
 
 # Multiplication
@@ -154,3 +155,80 @@ elif player2_points > player1_points:
     print('Player2 is the total winner')
 else:
     print('Total result is tie')
+
+# Odd Even Prime
+
+print(datetime.datetime.now())
+print('Mohammad Reza Siyahloo')
+print('Shall the program begin? ')
+Start_Request = str(input('Type Yes to start and No to quit: '))
+
+
+def Check():
+    if Start_Request == 'Yes':
+        Start = int(input('Enter starting point: '))
+        End = int(input('Enter final point: '))
+        End += 1
+        print('Available sets are: Odd, Even, Prime')
+        User_set = str(input('Which one do you want: '))
+        Result = []
+
+        def Odd(Start, End):
+            for i in range(Start, End):
+                if i % 2 == 1:
+                    Result.append(i)
+            print(Result)
+
+        def Even(Start, End):
+            for i in range(Start, End):
+                if i % 2 == 0:
+                    Result.append(i)
+            print(Result)
+
+        def Prime(Start, End):
+            for i in range(Start, End):
+                if i > 1:
+                    for j in range(2, i):
+                        if i % j == 0:
+                            break
+                    else:
+                        Result.append(i)
+            print(Result)
+        if User_set == 'Odd':
+            print('Odd numbers are: ')
+            Odd(Start, End)
+        elif User_set == 'Even':
+            print('Even numbers are: ')
+            Even(Start, End)
+        elif User_set == 'Prime':
+            print('Prime numbers are: ')
+            Prime(Start, End)
+        print('Shall the program continue? ')
+        Continue_Request = str(input('Type Yes to continue and No to quit: '))
+        if Continue_Request == 'Yes':
+            Check()
+        elif Continue_Request == 'No':
+            pass
+    elif Start_Request == 'No':
+        pass
+
+
+Check()
+
+# Guess
+Answer = "Age"
+Guess_Attempt = [1, 2, 3]
+
+print("What goes up but never comes down?")
+for i in Guess_Attempt:
+    Guess = input("Enter your guess: ")
+    Guess.capitalize
+    if Guess == Answer:
+        print('YOU WON!')
+        break
+    elif Guess != Answer and i == 1:
+        print('Wrong, Try again')
+    elif Guess != Answer and i == 2:
+        print('Wrong, last choice')
+    elif Guess != Answer and i == 3:
+        print('YOY LOST! The answer is Age')
