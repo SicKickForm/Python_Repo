@@ -232,3 +232,34 @@ for i in Guess_Attempt:
         print('Wrong, last choice')
     elif Guess != Answer and i == 3:
         print('YOY LOST! The answer is Age')
+
+# Total Score
+
+
+def TS():
+    Lesson_Number = int(input('How many lessons? '))
+    Points = 0
+    Credits = 0
+    for i in range(Lesson_Number):
+        P = {
+            'Lesson': input("Enter lesson's name: "),
+            'Credit': int(input("Enter lesson's credit: ")),
+            'Score': int(input("Enter lesson's score: ")),
+        }
+        Result = {
+            'Lesson': P['Lesson'],
+            'Credit': P['Credit'],
+            'Score': P['Score'],
+            'Point': P['Score'] * P['Credit']
+        }
+        Points += Result['Point']
+        Credits += Result['Credit']
+    print('Yout total score is:', Points / Credits)
+    Cmd = input('Enter Q to quit or U to use : ')
+    if Cmd == 'U':
+        TS()
+    elif Cmd == 'Q':
+        print('Program Over')
+
+
+TS()

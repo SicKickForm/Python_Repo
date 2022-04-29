@@ -71,6 +71,9 @@ del termsPassed
 # Casting complex
 Class_Number = -2+1j
 
+# Casting None
+Money = None
+
 # Showing variable datatype
 print(type(Class_Number))
 
@@ -112,6 +115,7 @@ print([i for i in Digits[::-1]])
 del Digits
 
 # Casting list (Ordered, Indexed, Changeable, Duplicatable)
+# Use lists if you have a collection of data that does not need random access
 Community_Partners = ['Vandal', 'Saboteur', 'Muse']
 Community_Partners[1:2] = ['Siren', 'Brute', 'Prowler']
 Community_Partners[1:4] = ['Saboteur']
@@ -160,9 +164,13 @@ print(Community_Partners.count('Vandal'))
 print('Brute' in Community_Partners)
 # Checking variable absence
 print('Siren' not in Community_Partners)
-del (Community_Partners, Dog, Snake, Charming, Info, Friends)
+# List comprehension
+Cubes = [i**2 for i in range(11)]
+print(Cubes)
+del (Community_Partners, Dog, Snake, Charming, Info, Friends, Cubes)
 
 # Creating tuple (Ordered, Indexed, Unchangeable, Duplicatable)
+# Use tuples when your data should not change
 Odd = (1, 3, 5)
 Rest = (7, 9)
 Odd += Rest
@@ -181,12 +189,14 @@ Odd = tuple(Odd)
 del Odd, Rest, First, Second
 
 # Creating set (Unordered, Unindexed, Unchangeable, Unduplicatable)
+# Use a set if you need uniqueness for the elements
 Members = {'SicKickForm', 'Dia'}
 Age = set((18, 17, 20))
 Newbie = {'akaTeen', 22}
 # Set methods
 Members.add('Siren')
 Members.update(Age)
+print(Members | Newbie)
 Members = Members.union(Newbie)
 print(len(Members))
 print(Members)
@@ -199,10 +209,14 @@ Crewmates = Members.copy()
 print(Crewmates.isdisjoint(Newbie))
 print(Crewmates.issuperset(Newbie))
 print(Crewmates.issubset(Members))
+print(Members & Newbie)
 Similarity = Members.intersection(Newbie)
 print(Similarity)
+print(Members ^ Newbie)
 Difference = Members.symmetric_difference(Newbie)
 print(Difference)
+print(Members - Newbie)
+print(Newbie - Members)
 Difference = Members.difference(Newbie)
 print(Difference)
 Members.symmetric_difference_update(Newbie)
@@ -222,6 +236,8 @@ print(type(Members))
 del Members
 
 # Creating dictionary (Ordered, Unindexed, Changeable, Unduplicatable)
+# Use a dictionary when you need a logical association between key and value
+# Use a dictionary when you need fast lookup for your data based on the key
 Members = {
     'Names': ('SicKickForm', 'Dia', 'Siren'),
     'Age': (18, 17, 20)}
@@ -231,6 +247,7 @@ print(Members['Names'])
 print(Members['Names'][1])
 # Nested dictionary
 # You can also use post-written dicts as an object in new dict
+# You can only use unchangeable objects as keys in dict
 Team = {
     'Member1': {'Name': Members['Names'][0],
                 'Age': Members['Age'][0]},
@@ -249,6 +266,7 @@ Team = dict(Members)
 print(len(Members))
 print(Members.items())
 print(Members.get('Age'))
+print(Members.get('Member4', 'Not Available'))
 Members.update({'Crewmates': ('Vandal', 'Saboteur', 'Muse', 'Prowler')})
 print(Members)
 print(Members.keys())
@@ -276,7 +294,7 @@ Code = memoryview(bytes(5))
 print(type(Code))
 del Code
 
-# Arrays iteration (iterable and iterator)
+# iteration (iterable and iterator)
 # You can Use iteration with iter() and next() commands
 Names = ('SicKickForm', 'Dia', 'akaTeen', 'Siren')
 Community = iter(Names)
@@ -286,6 +304,33 @@ print(next(Community))
 print(next(Community))
 del Names, Community
 
+# Generators
+# Generators can iterate through iterators without saving them in memory
+# Generators usually include functions and loops
+# Use yield statement instead of return statement to keep iterating
+# You can also convert generators into lists to display them
+
+
+def Countdown():
+    CD = 10
+    while CD > 0:
+        yield CD
+        CD -= 1
+
+
+for i in Countdown():
+    print(i)
+
+
+def Marks(X):
+    for i in range(X):
+        if i < 10:
+            yield i
+
+
+print(list(Marks(20)))
+
+del Countdown, Marks
 # Variables scope
 # Variables created without indentation are global
 # Variables created with indentation are local

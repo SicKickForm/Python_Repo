@@ -10,7 +10,7 @@ elif Num != 0:
 # Short hand Nested if_else/elif statement
 print('Positive') if Num > 0 else print('Negative') if Num < 0 else print('0')
 
-# Nested While statement
+# Nested while statement
 while Num == 0:
     continue
 else:
@@ -21,7 +21,7 @@ else:
         print('Negative')
 del Num
 
-# Nested For statement
+# Nested for statement
 i = 1
 for Places in range(1, 4):
     for Friends in ['SicKickForm', 'Dia', 'akaTeen']:
@@ -65,4 +65,17 @@ if Age < 18:
     raise Exception('You are not qualified')
 else:
     print('You are qualified')
-    del Age
+del Age
+
+# All any enumerate statements
+# All statement is True if all iterable members have the condition
+# Any statement is True if atleast one iterable member has the condition
+# Enumerate statement iterates through iterable members with their index
+Ages = [17, 14, 13, 22]
+if all(i < 18 for i in Ages):
+    print('Not qualified')
+if any(i > 18 for i in Ages):
+    print('Qualified')
+for i in enumerate(Ages):
+    print(i)
+del Ages

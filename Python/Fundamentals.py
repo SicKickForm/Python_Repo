@@ -59,7 +59,9 @@ max(A, B)
 min(A, B)
 # Returns the closest integer to number
 round(A)
-del A, B
+# Returns the addition of all list numbers
+sum([A, B])
+del A, B,
 
 # Bit wise operators
 # You can use quick bit wise operators too

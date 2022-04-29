@@ -9,7 +9,7 @@
 # Use from module import A command to call only A from module
 # When using from method don't refer to module other functions and variables
 # Use module.A command to use A from module
-# Use dir() function to get all methods and variables in a module
+# Use dir(A) function to get all methods and variables in module A
 
 # Built-in modules
 import platform

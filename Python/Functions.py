@@ -1,7 +1,8 @@
 # Any statement followed by a () is a function
-# Defining function
 # You can assign variables when calling function to choose from
 # Assign default variables after non-default variables
+# Functions that don't access anything outside them are called pure functions
+# Functional programming is using only pure functions
 def Func1(Age1, Age2, Age3, Name='SicKickForm'):
     print(Name + ' is ' + str(Age2))
 
@@ -86,11 +87,70 @@ print(Func9(8, 2))
 # lambda function takes only one expression
 
 
-def Func10(N):
-    return lambda A, B, C: (A + B + C) ** N
+def Func10(Lambda_Func10, N):
+    return Lambda_Func10(N)
 
 
-Lambda_Func10 = Func10(3)
-print(Lambda_Func10(2, 4, 8))
-del (Func1, Func2, Members, Func3, Func4, Func5, Func6,
-     Func7, Func8, Func9, Func10, Lambda_Func10)
+print(Func10(lambda X: X**3, 5))
+
+print((lambda X: X**5 / 5)(3))
+
+# Use map function to iterate through iterable elements and apply a function
+
+
+def Func11(X):
+    return X ** 2
+
+
+Nums = range(10)
+print(list(map(Func11, Nums)))
+
+# Use filter function to iterate through iterable elements and remove odd ones
+# Use a function with a boolean value to check if element fit the predicate
+print(list(filter(lambda X: X < 6, Nums)))
+
+# Decoration
+# Decorator is a function that:
+# Includes an inner function and returns it
+# Takes another function as its argument
+# Use @ statement to decorate the decorator function with it's argument function
+
+
+def Func12(A):
+    def Func12_2():
+        print('This is a decoration test')
+        A()
+        print('Nice')
+    return Func12_2()
+
+
+@Func12
+def Func12_3():
+    print('It works')
+
+# Recursion
+# Recursion is calling a function inside itself
+# Recursion can also be two different functions calling eachother
+# Recursion can be infinite without a base case
+# You might need to create a base case to use at the end of recursion process
+
+
+def Func13(A):
+    if A % 2 == 0:
+        print('Even')
+    else:
+        Func13_2(A)
+
+
+def Func13_2(A):
+    if A % 2 == 1:
+        print('Odd')
+    else:
+        A = round(A)
+        Func13(A)
+
+
+Func13(12.6)
+
+del (Func1, Func2, Members, Func3, Func4, Func5, Func6, Func7, Func8, Func9,
+     Func10, Func11, Nums, Func12, Func12_3, Func13, Func13_2)
