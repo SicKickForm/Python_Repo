@@ -1,5 +1,7 @@
 import datetime
 import random
+from math import sin
+from scipy.optimize import minimize
 
 # Multiplication
 
@@ -13,6 +15,7 @@ Num2 = int(input('Enter 2nd number: '))
 print('Multiplication is ' + str(Multiplication(Num1, Num2)))
 
 # Calculator
+
 print('Operations are : Addition, Subtraction, Multiplication, Division')
 Operation = str(input('Select an operation: '))
 Quantity = int(input('How many numbers do you enter? '))
@@ -57,13 +60,14 @@ def Ops(Operation):
 Ops(Operation)
 
 # Rock-Paper-Scissor
+
 Rounds = int(input('How many rounds are You playing? '))
 print('Modes are: Solo player, Multi player')
 Mode = input('What mode are you playing? ')
 i = 1
 player1_points = 0
 player2_points = 0
-# 1- Multi player mode
+
 if Mode == 'Multi player':
     while i <= Rounds:
         Choices = ['rock', 'paper', 'scissor']
@@ -103,7 +107,7 @@ if Mode == 'Multi player':
                 i += 1
             else:
                 print('Wrong choice')
-# 2- Solo player mode
+
 elif Mode == 'Solo player':
     while i <= Rounds:
         Choices = ['rock', 'paper', 'scissor']
@@ -146,7 +150,7 @@ elif Mode == 'Solo player':
                 i += 1
 else:
     print('Wrong mode')
-# 3- Final result
+
 print('Player1 points are ' + str(player1_points))
 print('Player2 points are ' + str(player2_points))
 if player1_points > player2_points:
@@ -216,6 +220,7 @@ def Check():
 Check()
 
 # Guess
+
 Answer = "Age"
 Guess_Attempt = [1, 2, 3]
 
@@ -232,6 +237,99 @@ for i in Guess_Attempt:
         print('Wrong, last choice')
     elif Guess != Answer and i == 3:
         print('YOY LOST! The answer is Age')
+
+# Dice
+
+Numbers = [1, 2, 3, 4, 5, 6]
+print('Which mode do you play?')
+Mode = input('Enter S for solo and D for duo mode: ')
+if Mode == 'S':
+    def Play():
+        def solo():
+            Play_Command = input('Enter P to play or Q to quit: ')
+            if Play_Command == 'P':
+                Roll_Command = input('Enter R to roll: ')
+                if Roll_Command == 'R':
+                    P_Num = random.choice(Numbers)
+                    S_Num = random.choice(Numbers)
+                    print('Your dice is ' + str(P_Num))
+                    print('System dice is ' + str(S_Num))
+                    P1_Point = 0
+                    P2_Point = 0
+                    if P_Num > S_Num:
+                        print('You Won!')
+                        P1_Point += 1
+                    elif P_Num == S_Num:
+                        print('Tie!')
+                    elif S_Num > P_Num:
+                        print('Opponent Lost!')
+                        P2_Point += 1
+                    print('Player: ' + str(P1_Point) +
+                          'Opponent: ' + str(P2_Point))
+                else:
+                    print('Game Over')
+        solo()
+        Play()
+    Play()
+elif Mode == 'D':
+    People = int(input('How many people you play with? '))
+    Rounds = int(input('How many rounds You play? '))
+    # 2.Duo Player
+    if People == 2:
+        for i in range(Rounds):
+            P1_Point = 0
+            P2_Point = 0
+            P1_Roll_Command = input(('Player Enter R to toll: '))
+            if P1_Roll_Command == 'R':
+                P1_Num = random.choice(Numbers)
+                print('Player dice is ' + str(P1_Num))
+            else:
+                print('Try Again')
+            P2_Roll_Command = input(('Opponent Enter R to roll:'))
+            if P2_Roll_Command == 'R':
+                P2_Num = random.choice(Numbers)
+                print('Opponent dice is ' + str(P2_Num))
+                if P1_Num > P2_Num:
+                    print('Player Won!')
+                    P1_Point += 1
+                elif P1_Num == P2_Num:
+                    print('Tie!')
+                elif P2_Num > P1_Num:
+                    print('Opponent Won!')
+                    P2_Point += 1
+        print('Player: ' + str(P1_Point) + ' Opponent' + str(P2_Point))
+    elif People == 3:
+        for i in range(Rounds):
+            P1_Point = 0
+            P2_Point = 0
+            P3_Point = 0
+            P1_Roll_Command = input(('Player Enter R to toll: '))
+            if P1_Roll_Command == 'R':
+                P1_Num = random.choice(Numbers)
+                print('Player dice is ' + str(P1_Num))
+            else:
+                print('Try Again')
+            P2_Roll_Command = input(('Opponent Enter R to roll:'))
+            if P2_Roll_Command == 'R':
+                P2_Num = random.choice(Numbers)
+                print('Opponent dice is ' + str(P2_Num))
+            P3_Roll_Command = input(('Player Enter R to toll: '))
+            if P3_Roll_Command == 'R':
+                P3_Num = random.choice(Numbers)
+                print('Player dice is ' + str(P3_Num))
+            else:
+                print('Try Again')
+            if P1_Num > P2_Num and P1_Num > P3_Num:
+                print('Player 1 Won!')
+                P1_Point += 1
+            elif P2_Num > P1_Num and P2_Num > P3_Num:
+                print('Player 2 Won!')
+                P2_Point += 1
+            elif P3_Num > P1_Num and P3_Num > P2_Num:
+                print('Player 3 Won!')
+                P3_Point += 1
+            print('Player 1: ' + str(P1_Point) + ' Player 2: ' +
+                  str(P2_Point) + ' Player 3: ' + str(P3_Point))
 
 # Total Score
 
@@ -263,3 +361,120 @@ def TS():
 
 
 TS()
+
+# Total score 2
+
+Dict = {
+    'Lessons': {
+        'L1', 'L2', 'L3'},
+    'Scores': {
+        'L1': 17, 'L2': 14, 'L3': 19},
+    'Credits': {
+        'L1': 3, 'L2': 4, 'L3': 2}}
+
+TPoints = list(map(
+    lambda A: Dict['Scores'][A] * Dict['Credits'][A], Dict['Lessons']
+))
+TCredits = list(map(
+    lambda A: Dict['Credits'][A], Dict['Lessons']
+))
+print('Your total score is: ', sum(TPoints) / sum(TCredits))
+
+# Jackpot
+
+print('''
+Welcome To Our Community
+Your World Of Jackpots Awaits
+We're so glad you're here! You are now a part of our amazing community 
+Whether you've joined to win or just to have fun, we've got something for you.
+Let's go! ''')
+Attempt = 0
+Win = 0
+Lose = 0
+
+
+def Jackpot():
+    global Win
+    global Lose
+    global Attempt
+    Items = [1, 2, 3, 4, 5, 6, 7, 8]
+    Item1 = random.choice(Items)
+    Item2 = random.choice(Items)
+    Item3 = random.choice(Items)
+    Item4 = random.choice(Items)
+    Item5 = random.choice(Items)
+    Item6 = random.choice(Items)
+    Item7 = random.choice(Items)
+    Item8 = random.choice(Items)
+    Item9 = random.choice(Items)
+    print('         ', '-------------')
+    print('         ', '|', Item1, '|', Item2, '|', Item3, '|')
+    print('         ', '-------------')
+    print('Your Row:', '|', Item4, '|', Item5, '|', Item6, '|')
+    print('         ', '-------------')
+    print('         ', '|', Item7, '|', Item8, '|', Item9, '|')
+    print('         ', '-------------')
+    if Item4 == Item5 == Item6:
+        print('Jackpot! YOU WON')
+        Win += 1
+        Attempt += 1
+    else:
+        print('You lost! Better luck next time')
+        Lose += 1
+        Attempt += 1
+
+
+def Result():
+    print('Games Played: ', Attempt)
+    print('Games Won: ', Win)
+    print('Games Lost: ', Lose)
+
+
+def Run():
+    Command = input('Please Enter P to play or Q to quit: ')
+    if Command.upper() == 'P':
+        Jackpot()
+        Run()
+    elif Command.upper() == 'Q':
+        print('Game Over')
+    else:
+        print("Sorry I didn't get that! Please Try again")
+        Run()
+
+
+Run()
+Result()
+
+# Total score 3
+
+
+class Cls():
+    def __init__(self, name, score, credit):
+        self.name = name
+        self.score = score
+        self.credit = credit
+        self.point = self.score * self.credit
+
+
+L1 = Cls('Programming', 14, 4)
+L2 = Cls('Algebra', 17, 3)
+L3 = Cls('Calculus', 18, 3)
+L4 = Cls('History', 19, 2)
+Lessons = [L1, L2, L3, L4]
+
+TP = 0
+TC = 0
+for i in Lessons:
+    TP += i.point
+    TC += i.credit
+
+print('Your total score is', TP / TC)
+
+# Scipy
+
+
+def Eqn(X):
+    return X**2 + sin(X) + 3
+
+
+print(minimize(Eqn, 0, method='BFGS'))

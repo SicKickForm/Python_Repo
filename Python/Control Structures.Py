@@ -23,15 +23,14 @@ del Num
 
 # Nested for statement
 i = 1
-for Places in range(1, 4):
-    for Friends in ['SicKickForm', 'Dia', 'akaTeen']:
-        for Consumables in ('Food', 'Dessert', 'Drink'):
-            for Menu in {'Heavy', 'Medium', 'Light'}:
-                print(i, Places, Friends, Consumables, Menu)
-                i += 1
+for Friends in ['SicKickForm', 'Dia', 'akaTeen']:
+    for Consumables in ('Food', 'Dessert', 'Drink'):
+        for Menu in {'Heavy', 'Medium', 'Light'}:
+            print(i, Friends, Consumables, Menu)
+            i += 1
 else:
     print(str(i) + ' Home')
-del i, Places, Friends, Consumables, Menu
+del Friends, Consumables, Menu
 
 # Assertion
 # Use assert command to execute a sanity-check inside code
@@ -52,7 +51,7 @@ print('R and NC-17 Check')
 # The finally block is executed regardless of the result of try-except blocks
 try:
     Age > 18
-except NameError:
+except ValueError:
     print('Enter Your age again')
 except:
     print('You are not qualified')
