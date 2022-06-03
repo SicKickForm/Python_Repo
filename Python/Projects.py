@@ -2,6 +2,8 @@ import datetime
 import random
 from math import sin
 from scipy.optimize import minimize
+import matplotlib.pyplot as Plt
+import numpy as Np
 
 # Multiplication
 
@@ -478,3 +480,38 @@ def Eqn(X):
 
 
 print(minimize(Eqn, 0, method='BFGS'))
+
+# Sin(X)
+X = Np.arange(0, 2*Np.pi, 0.157)
+Y = Np.sin(X)
+Plt.plot(X, Y)
+Plt.ylabel('( Y )')
+Plt.xlabel('( X )')
+Plt.title("Sin(X)")
+Plt.show()
+# Bar
+Scores = Np.random.randint(0, 20, 100)
+print('Scores:\n', Scores)
+Scores_Bool = Scores >= 10
+Passed = Scores[Scores_Bool]
+print('Passed Scores:\n', Passed)
+Data = {'10 - 12': list(filter(lambda X: X <= 12, Passed)),
+        '12 - 14': list(filter(lambda X: 12 < X <= 14, Passed)),
+        '14 - 16': list(filter(lambda X: 14 < X <= 16, Passed)),
+        '16 - 18': list(filter(lambda X: 16 < X <= 18, Passed)),
+        '18 - 20': list(filter(lambda X: 18 < X <= 20, Passed)),
+        }
+print('Sorted Scores:\n', Data)
+Values_Len = []
+Keys_Name = list(Data.keys())
+for i in list(Data.values()):
+    Values_Len.append(len(i))
+Values_Sum = 0
+for i in list(Data.values()):
+    for j in i:
+        Values_Sum += j
+Values_Min = Values_Sum / len(Passed)
+Keys_Name.append('AVG')
+Values_Len.append(Values_Min)
+Plt.bar(Keys_Name, Values_Len)
+Plt.show()
