@@ -642,7 +642,5 @@ print(cosine((-1, 4), (2, 9)))
 print('hamming')
 print(hamming((True, False, True), (False, True, True)))
 
-# Matplotlib module methods
-
 del Json_Type_Info, Json_Type_Info2, Python_Dict_Info, IT_List, i, x,
 Arr, Arr_Copy, Arr_View, Arr_Bool, Eqn, Points, KDT, Simplices

@@ -58,7 +58,7 @@ class Info4(Info2):
 Date1 = Info4('SicKickForm', 18, '2/8/2022')
 Date1.Func3()
 
-# Use pass command to ignore function's empty properties
+# Use pass command to ignore class empty properties
 
 
 class Info5:

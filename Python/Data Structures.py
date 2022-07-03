@@ -86,7 +86,7 @@ del Class_Number
 10 <= 10
 # One by one alphabetical comparison (M > E)
 'Money' >= 'Education'
-# False (int(0))
+# False (0)
 11 != 11
 66 > 75
 # One by one alphabetical comparison (H > G)

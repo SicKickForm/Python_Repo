@@ -102,7 +102,7 @@ def Func11(X):
     return X ** 2
 
 
-Nums = range(10)
+Nums = range(11)
 print(list(map(Func11, Nums)))
 
 # Use filter function to iterate through iterable elements and remove odd ones
