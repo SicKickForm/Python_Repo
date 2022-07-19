@@ -26,6 +26,7 @@ from scipy.sparse.csgraph import connected_components, dijkstra, floyd_warshall,
 from scipy.spatial import KDTree, Delaunay, ConvexHull
 from scipy.spatial.distance import euclidean, cityblock, cosine, hamming
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # Platform module methods
 # Platform module includes Your device's specs information
