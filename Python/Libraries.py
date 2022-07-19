@@ -184,6 +184,7 @@ print(math.fsum((1, 2, 2)))
 print(math.prod([5]))
 
 # Json module methods
+# JSON is an object similar to dictionaries containing plain data
 # Json module includes various methods to store and exchange Json (Java
 # Script object notation) data
 # converting json type data into a python dictionary
