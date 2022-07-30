@@ -18,6 +18,7 @@ import math
 import json
 import re
 import itertools
+import matplotlib.pyplot as plt
 import numpy
 from scipy import constants
 from scipy.optimize import root, minimize
@@ -25,40 +26,63 @@ from scipy.sparse import csr_matrix, csc_matrix
 from scipy.sparse.csgraph import connected_components, dijkstra, floyd_warshall, bellman_ford, depth_first_order, breadth_first_order
 from scipy.spatial import KDTree, Delaunay, ConvexHull
 from scipy.spatial.distance import euclidean, cityblock, cosine, hamming
-import matplotlib.pyplot as plt
 import pandas as pd
 
 # Platform module methods
 # Platform module includes Your device's specs information
+print("__builtins__")
 print(platform.__builtins__)
+print("__cached__")
 print(platform.__cached__)
+print("__file__")
 print(platform.__file__)
+print("__name__")
 print(platform.__name__)
+print("__version__")
 print(platform.__version__)
 platform.__doc__
 platform.__loader__
 platform.__package__
 platform.__spec__
-print(platform.release())
+print("processor")
 print(platform.processor())
-print(platform.sys)
-print(platform.system())
-print(platform.uname())
+print("version")
 print(platform.version())
-print(platform.win32_edition())
-print(platform.win32_is_iot())
-print(platform.win32_ver())
+print("machine")
 print(platform.machine())
+print("node")
 print(platform.node())
+print("platform")
 print(platform.platform())
+print("system")
+print(platform.system())
+print("release")
+print(platform.release())
+print("uname")
+print(platform.uname())
+print("win32_edition")
+print(platform.win32_edition())
+print("win32_is_iot")
+print(platform.win32_is_iot())
+print("win32_ver")
+print(platform.win32_ver())
+print("java_ver")
 print(platform.java_ver())
+print("mac_ver")
 print(platform.mac_ver())
-print(platform.python_branch())
+print("python_build")
 print(platform.python_build())
+print("python_branch")
+print(platform.python_branch())
+print("python_compiler")
 print(platform.python_compiler())
+print("python_implementation")
 print(platform.python_implementation())
+print("python_revision")
 print(platform.python_revision())
+print("python_version")
 print(platform.python_version())
+print("python_version_tuple")
 print(platform.python_version_tuple())
 platform.architecture()
 platform.uname_result
@@ -67,11 +91,14 @@ platform.system_alias
 
 # Datetime module methods
 # Datetime module includes various methods to show date and time
-# Use datetime() constructor command Create time objects
-# You can create time objects up to micro seconds
+# Creating time objects up to micro seconds
+print("date")
 print(Date.date(2003, 1, 17))
+print("time")
 print(Date.time(19, 37))
+print("datetime")
 print(Date.datetime(2003, 1, 17, 19, 37))
+print("now")
 print(Date.datetime.now())
 print(Date.datetime.now().year)
 print(Date.datetime.now().month)
@@ -83,24 +110,30 @@ print(Date.datetime.now().second)
 print(Date.datetime.now().microsecond)
 # Use strftime command to format date objects into readable strings
 # strftime methods
+print('strftime')
 # Date and time methods
+print('Date and time')
 print(Date.datetime.now().strftime('%c'))
 print(Date.datetime.now().strftime('%x'))
 print(Date.datetime.now().strftime('%X'))
 # Year methods
+print('Year')
 print(Date.datetime.now().strftime('%C'))
 print(Date.datetime.now().strftime('%G'))
 print(Date.datetime.now().strftime('%Y'))
 print(Date.datetime.now().strftime('%y'))
 # Month methods
+print('Month')
 print(Date.datetime.now().strftime('%B'))
 print(Date.datetime.now().strftime('%b'))
 print(Date.datetime.now().strftime('%m'))
 # Week methods
+print('Week')
 print(Date.datetime.now().strftime('%U'))
 print(Date.datetime.now().strftime('%W'))
 print(Date.datetime.now().strftime('%V'))
 # Day methods
+print('Day')
 print(Date.datetime.now().strftime('%A'))
 print(Date.datetime.now().strftime('%a'))
 print(Date.datetime.now().strftime('%j'))
@@ -108,87 +141,152 @@ print(Date.datetime.now().strftime('%d'))
 print(Date.datetime.now().strftime('%w'))
 print(Date.datetime.now().strftime('%u'))
 # Hour methods
+print('Hour')
 print(Date.datetime.now().strftime('%H'))
 print(Date.datetime.now().strftime('%I'))
 print(Date.datetime.now().strftime('%p'))
 # Minute method
+print('Minute')
 print(Date.datetime.now().strftime('%M'))
 # Second method
+print('Second')
 print(Date.datetime.now().strftime('%S'))
 # Micro second method
+print('Micro second')
 print(Date.datetime.now().strftime('%f'))
 print(Date.datetime.now().strftime('%%'))
+print("timedelta")
+print(Date.datetime(2022, 7, 21) - Date.timedelta(18*365))
+print(Date.datetime(2003, 1, 17) + Date.timedelta(days=18*365))
+print(Date.timedelta(hours=60))
+print("total_seconds")
+print(Date.timedelta(minutes=1824).total_seconds())
 
 # Math module methods
 # Math module includes various arithmetical subjects and operators
+print("e")
 print(math.e)
+print("inf")
 print(math.inf)
+print("nan")
 print(math.nan)
+print("pi")
 print(math.pi)
+print("tau")
 print(math.tau)
-# Any
+# All numbers
+print("tan")
 print(math.tan(90))
+print("tanh")
 print(math.tanh(90))
+print("atan")
 print(math.atan(90))
+print("atan2")
 print(math.atan2(1, 1))
+print("sinh")
 print(math.sinh(60))
+print("asinh")
 print(math.asinh(60))
+print("cosh")
 print(math.cosh(30))
+print("erf")
 print(math.erf(5))
+print("erfc")
 print(math.erfc(5))
+print("fmod")
 print(math.fmod(11, 6))
+print("exp")
 print(math.exp(5))
+print("expm1")
 print(math.expm1(5))
+print("frexp")
 print(math.frexp(5))
+print("ldexp")
 print(math.ldexp(1.25, 2))
+print("ceil")
 print(math.ceil(4.4))
+print("trunc")
 print(math.trunc(5.4))
+print("floor")
 print(math.floor(5.6))
+print("comb")
 print(math.comb(5, 4))
+print("perm")
 print(math.perm(5, 4))
+print("factorial")
 print(math.factorial(5))
+print("pow")
 print(math.pow(5 ** (1 / 2), 2))
+print("sqrt")
 print(math.sqrt(25))
+print("gcd")
 print(math.gcd(15, 25))
+print("remainder")
 print(math.remainder(5, 4))
+print("copysign")
 print(math.copysign(-5, 2))
+print("fabs")
 print(math.fabs(-5))
+print("isclose")
 print(math.isclose(1.25, 1.251))
+print("isfinite")
 print(math.isfinite(0))
+print("isinf")
 print(math.isinf(1))
+print("isnan")
 print(math.isnan(1))
-# W
+# W numbers
+print("gamma")
 print(math.gamma(5))
+print("lgamma")
 print(math.lgamma(5))
+print("isqrt")
 print(math.isqrt(26))
+print("log")
 print(math.log(1))
+print("log10")
 print(math.log10(100000))
+print("log1p")
 print(math.log1p(0))
+print("log2")
 print(math.log2(1))
-# W - (1 , 0)
+# W - (1 , 0) numbers
+print("acosh")
 print(math.acosh(1))
-# [-1 , +1]
+# [-1 , +1] numbers
+print("acos")
 print(math.acos(-1))
+print("asin")
 print(math.asin(1))
+print("cos")
 print(math.cos(0))
+print("sin")
 print(math.sin(0))
-# (-1 , +1)
+# (-1 , +1) numbers
+print("atanh")
 print(math.atanh(0.5))
-# Angle
+# Angles
+print("degrees")
 print(math.degrees(math.pi))
+print("radians")
 print(math.radians(90))
-# Coordinated point
+# Coordinated points
+print("dist")
 print(math.dist((3, 4), (0, 0)))
+print("hypot")
 print(math.hypot(3, 4))
-# Array
+# Arrays
+print("fsum")
 print(math.fsum((1, 2, 2)))
-print(math.prod([5]))
+print("prod")
+print(math.prod([1, 2, 2]))
 
 # Json module methods
 # JSON is an object similar to dictionaries containing plain data
 # Json module includes various methods to store and exchange Json (Java
 # Script object notation) data
 # converting json type data into a python dictionary
+print("loads")
 Json_Type_Info = '{"Name" : "SicKickForm", "Age" : 18}'
 Python_Dict_Info = json.loads(Json_Type_Info)
 # When You convert from Python to Json objects change to Json equivalent
@@ -202,6 +300,7 @@ Python_Dict_Info = json.loads(Json_Type_Info)
 # True   =  true
 # False  =  false
 # None   =  null
+print("dumps")
 Json_Type_Info2 = json.dumps(Python_Dict_Info)
 Info = {
     "Name": "SicKickForm",
@@ -221,19 +320,33 @@ print(json.dumps(Info))
 # Use sort-keys command to specify is the keys should be ordered or not
 print(json.dumps(Info, indent=1, separators=(', ', ': ',), sort_keys=True))
 # load() function is to read Json data from a file and convert to Python dict
+print("load")
 # dump() function is to read Python file and convert to Json file
+print("dump")
 
 # RegEx module methods
 # Use RegEx to check if a string contains the specified search pattern
 Info = 'SicKickForm of human kind is a nickname for a 18 years old boy'
+print("search")
 print(re.search('SicKickForm', Info))
 print(re.search('SicKickForm', Info).span())
 print(re.search('SicKickForm', Info).string)
 print(re.search('SicKickForm', Info).group())
+# Start of string
+print(bool(re.search('\ASicK', Info)))
+# Start or end of a word
+print(bool(re.search(r'\bSicK', Info)))
+print(bool(re.search(r'Form\b', Info)))
+# Middle of a word
+print(bool(re.search(r'\BKick', Info)))
+# End of a word
+print(bool(re.search('boy\Z', Info)))
+# Starting with
+print(bool(re.search('^S', Info)))
+# Ending with
+print(bool(re.search('y$', Info)))
+print("findall")
 print(re.findall('f', Info))
-print(re.split('i', Info, 3))
-print(re.sub('i', '/', Info, 3))
-# RegEx meta characters
 # Lower case charcaters in the domain
 print(re.findall('[a-h]', Info))
 print(re.findall('[abc]', Info))
@@ -256,22 +369,8 @@ print(re.findall('i.+F', Info))
 print(re.findall('i.?F', Info))
 # Specified amount of  characters in the blank sport
 print(re.findall('i.{2}F', Info))
-# Starting with
-print(bool(re.search('^S', Info)))
-# Ending with
-print(bool(re.search('y$', Info)))
 # Either or
 print(re.findall('boy|girl', Info))
-# Special charcaters
-# Start of string
-print(bool(re.search('\ASicK', Info)))
-# Start or end of a word
-print(bool(re.search(r'\bSicK', Info)))
-print(bool(re.search(r'Form\b', Info)))
-# Middle of a word
-print(bool(re.search(r'\BKick', Info)))
-# End of a word
-print(bool(re.search('boy\Z', Info)))
 # Digits of String
 print(re.findall('\d', Info))
 # String without digits
@@ -284,6 +383,10 @@ print(re.findall('\S', Info))
 print(re.findall('\w', Info))
 # String without letters digits underscores
 print(re.findall('\W', Info))
+print("split")
+print(re.split('i', Info, 3))
+print("sub")
+print(re.sub('i', '/', Info, 3))
 
 # Itertools module methods
 # Counting up to infinite using specified step
@@ -353,6 +456,8 @@ print(list(itertools.combinations('ABCD', 2)))
 # Returns combinations of iterable with specified length with repeat allowed
 print('combinations_with_replacement')
 print(list(itertools.combinations_with_replacement('ABCD', 2)))
+
+# Matplotlib module methods
 
 # Numpy module allows faster processing with array objects and math
 # Array objects contain all the data in only one memory place (locality of reference)
@@ -765,4 +870,3 @@ plt.show()
 
 del Json_Type_Info, Json_Type_Info2, Python_Dict_Info, IT_List, i, x,
 Arr, Arr_Copy, Arr_View, Arr_Bool, Eqn, Points, KDT, Simplices, Nums, Team, Data, Mean
-
