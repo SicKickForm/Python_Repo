@@ -99,3 +99,6 @@ print(next(Cls))
 print(next(Cls))
 print(next(Cls))
 del Num, Cls
+vmess://eyJhZGQiOiJ0Mi53YXJ6b25lLmNmZCIsImFpZCI6IjAiLCJob3N0IjoiVWEueWVrdGFuZXQuY29tIiwiaWQiOiJlMDcxNDQyMS1iMDA4LTUwMDAtYWYxMS05YmUwY2JiZjU1YTUiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiLyIsInBvcnQiOiIzODUwMSIsInBzIjoi8J+HufCfh7cgVFIgLSBAT3h5U2hvcDEiLCJzY3kiOiJhdXRvIiwic25pIjoiIiwidGxzIjoiIiwidHlwZSI6Imh0dHAiLCJ2IjoiMiJ9
+
+
