@@ -118,6 +118,7 @@ del Digits
 # Use lists if you have a collection of data that does not need random access
 Community_Partners = ['Vandal', 'Saboteur', 'Muse']
 Community_Partners[1:2] = ['Siren', 'Brute', 'Prowler']
+print(Community_Partners)
 Community_Partners[1:4] = ['Saboteur']
 print(Community_Partners)
 Info = list(('Siren', 'Brute', 'Prowler'))
@@ -196,7 +197,9 @@ Newbie = {'akaTeen', 22}
 # Set methods
 Members.add('Siren')
 Members.update(Age)
+# A ∪ B
 print(Members | Newbie)
+print(Members)
 Members = Members.union(Newbie)
 print(len(Members))
 print(Members)
@@ -206,15 +209,21 @@ Missing = Members.pop()
 print(Members)
 print(Missing)
 Crewmates = Members.copy()
+# A ∩ B = ∅
 print(Crewmates.isdisjoint(Newbie))
+# B ⊆ A
 print(Crewmates.issuperset(Newbie))
+# A ⊆ B
 print(Crewmates.issubset(Members))
+# A ∩ B
 print(Members & Newbie)
 Similarity = Members.intersection(Newbie)
 print(Similarity)
+# (A - B) ∩ (B - A)
 print(Members ^ Newbie)
 Difference = Members.symmetric_difference(Newbie)
 print(Difference)
+# A - B
 print(Members - Newbie)
 print(Newbie - Members)
 Difference = Members.difference(Newbie)
@@ -279,15 +288,30 @@ Members.clear()
 print(Members)
 del Members
 
-# casting bytes
-Num1 = bytes(5)
-print(type(Num1))
-del Num1
+# Casting specified amount of bytes
+# Bytes have binary numeric values and are created in hexa-deximal format
+# Bytes are immutable
+Empty_Bytes = bytes(5)
+print(Empty_Bytes)
+print(type(Empty_Bytes))
+Data_Bytes = bytes(b'\x57\x6f\x72\x6c\x64')
+print(Data_Bytes)
 
-# casting bytearray
-Num1 = bytearray(5)
-print(type(Num1))
-del Num1
+del Empty_Bytes, Data_Bytes
+
+# Byte array
+# Casting specified amount of bytes in a bytearray
+# Bytearrays are mutable
+# You can use list methods on bytearrays
+Mutable_Bytearray = bytearray(3)
+print(Mutable_Bytearray)
+print(type(Mutable_Bytearray))
+Data_Bytearray = bytearray(b'\x57\x6f\x72\x6c\x64')
+Data_Bytearray[0] = 255
+print(Data_Bytearray)
+print(Data_Bytearray[0:2])
+
+del Data_Bytearray, Mutable_Bytearray
 
 # Casting memoryview
 Code = memoryview(bytes(5))
@@ -298,39 +322,28 @@ del Code
 # You can Use iteration with iter() and next() commands
 Names = ('SicKickForm', 'Dia', 'akaTeen', 'Siren')
 Community = iter(Names)
-print(next(Community))
-print(next(Community))
-print(next(Community))
-print(next(Community))
+for i in Names:
+    print(next(Community))
 del Names, Community
 
 # Generators
 # Generators can iterate through iterators without saving them in memory
 # Generators usually include functions and loops
-# Use yield statement instead of return statement to keep iterating
-# You can also convert generators into lists to display them
+# Use yield statement instead of storing the values and returning them
+# You can convert generator results into lists to display them
 
 
-def Countdown():
-    CD = 10
-    while CD > 0:
-        yield CD
-        CD -= 1
+def Countdown(Max):
+    for i in range(Max):
+        yield(i)
 
 
-for i in Countdown():
-    print(i)
+print(Countdown(10))
+print(list(Countdown(10)))
+# List comprehensions can also be a genrator
+print(i for i in range(10))
+print(list(i for i in range(10)))
 
-
-def Marks(X):
-    for i in range(X):
-        if i < 10:
-            yield i
-
-
-print(list(Marks(20)))
-
-del Countdown, Marks
 # Variables scope
 # Variables created without indentation are global
 # Variables created with indentation are local
