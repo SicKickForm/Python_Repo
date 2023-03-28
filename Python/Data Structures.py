@@ -314,9 +314,21 @@ print(Data_Bytearray[0:2])
 del Data_Bytearray, Mutable_Bytearray
 
 # Casting memoryview
-Code = memoryview(bytes(5))
-print(type(Code))
-del Code
+# Use memoryview to access internal data of an objct that supports buffer protocol
+# Bytes and bytearray are two python objects that supoort buffer protocol
+# Memoryview makes a reference to the data rather than copying the data itself
+Data_Bytes = b'abcdefgh'
+print(type(Data_Bytes))
+print(Data_Bytes)
+Data_Memoryview = memoryview(Data_Bytes)
+print(type(Data_Memoryview))
+print(Data_Memoryview)
+# Memoryview methods
+print(Data_Memoryview.tobytes())
+print(Data_Memoryview.tolist())
+print(Data_Memoryview.toreadonly())
+print(Data_Memoryview.hex())
+del Data_Memoryview, Data_Bytes
 
 # iteration (iterable and iterator)
 # You can Use iteration with iter() and next() commands
