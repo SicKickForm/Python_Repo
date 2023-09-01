@@ -98,4 +98,11 @@ print(next(Cls))
 print(next(Cls))
 print(next(Cls))
 print(next(Cls))
+
+# Class polymorphism refers to functions that can be used on multiple objects
+# Class inheritance is an example of class polymorphism
+# Child classes inherits the properties and methods from the parent class
+
+
+
 del Num, Cls

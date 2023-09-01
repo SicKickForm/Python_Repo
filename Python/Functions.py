@@ -152,5 +152,8 @@ def Func13_2(A):
 
 Func13(12.6)
 
+# Function polymorphism refers to functions that can be used on multiple objects
+# len() is an example of function polymorphism
+
 del (Func1, Func2, Members, Func3, Func4, Func5, Func6, Func7, Func8, Func9,
      Func10, Func11, Nums, Func12, Func12_3, Func13, Func13_2)
