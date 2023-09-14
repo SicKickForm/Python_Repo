@@ -146,6 +146,10 @@ for i in Arr:
 print(Arr[Arr_Bool])
 Arr_Bool = Arr > 2
 print(Arr[Arr_Bool])
+
+# ------------------------------------------------------------------------------- #
+
+# Numpy Random
 # Returns specified amount of random numbers within specified range
 print('randint')
 print(numpy.random.randint(0, 100, 10))
@@ -169,4 +173,5 @@ print(Arr)
 # Returns a re-arranged view of original array object
 print('permutation ')
 print(numpy.random.permutation(Arr))
+
 # Numpy distribution and ufunc and more on is still left to check
