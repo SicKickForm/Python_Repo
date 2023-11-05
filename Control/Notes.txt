@@ -1,0 +1,6 @@
+x mode: Create the file / Return an error if the file exists
+w mode: Overwrite the file context / Create the file if it does not exist
+a mode: Append the file context / Create the file if it does not exist
+r mode: Read the file context (default)
+Use t extension for text mode (default) and b extension for binary mode
+Use .read(Num) to read certain amount of characters and .readline() to read one line
