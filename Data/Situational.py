@@ -52,36 +52,6 @@ del Data_Memoryview, Data_Bytes
 
 # ------------------------------------------------------------------------------- #
 
-# iteration (iterable and iterator)
-# You can Use iteration with iter() and next() commands
-Names = ('SicKickForm', 'Dia', 'akaTeen', 'Siren')
-Community = iter(Names)
-for i in Names:
-    print(next(Community))
-del Names, Community
-
-# ------------------------------------------------------------------------------- #
-
-# Generators
-# Generators can iterate through iterators without saving them in memory
-# Generators usually include functions and loops
-# Use yield statement instead of storing the values and returning them
-# You can convert generator results into lists to display them
-
-
-def Countdown(Max):
-    for i in range(Max):
-        yield(i)
-
-
-print(Countdown(10))
-print(list(Countdown(10)))
-# List comprehensions can also be a genrator
-print(i for i in range(10))
-print(list(i for i in range(10)))
-
-# ------------------------------------------------------------------------------- #
-
 # Variables scope
 # Variables created without indentation are global
 # Variables created with indentation are local
